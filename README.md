@@ -1,115 +1,119 @@
-# FuelTrack
-Sistema de monitoreo de combustible
+# FuelTrack  
+**Sistema de monitoreo y control de transporte de combustible**
 
+---
 
-⚙ Escenario real: Empresa de transporte de combustible
+## ⚙ Escenario Real  
+**Empresa objetivo:** *FuelTrans Guayaquil S.A.*  
+**Sector:** Transporte y distribución de combustibles.  
 
-Supón que la empresa se llama FuelTrans Guayaquil S.A.
-Tiene tres tipos de usuarios:
+El sistema opera con tres roles principales:  
+- 👨‍💼 **Administrador**  
+- 👷‍♂ **Operador Logístico**  
+- 🚛 **Conductor**
 
-👨‍💼 Administrador
+Cada rol ejecuta acciones específicas dentro del flujo operativo.
 
-👷‍♂ Operador logístico
+---
 
-🚛 Conductor
+## 🧩 Roles y Flujo Operativo
 
-🧩 Roles y flujo operativo
-🧑‍💼 1. Administrador
+---
 
-Responsable: Gerente o jefe de operaciones.
+## 👨‍💼 1. Administrador  
+**Responsable:** Gerente o Jefe de Operaciones  
+**Acceso:** Total
 
-Qué hace:
+### Funciones principales
+- Crear usuarios (conductores y operadores).  
+- Supervisar reportes globales:  
+  - Entregas completadas  
+  - Ingresos generados  
+  - Pagos pendientes  
+- Autorizar pagos y validar documentación (facturas, comprobantes).  
+- Control total sobre todos los viajes (visualizar, modificar, eliminar).  
+- Supervisar estados de entrega en tiempo real.
 
-Crea usuarios (conductores, operadores).
+### Dashboard del Administrador
+Incluye KPIs estratégicos:
+- Total de galones transportados esta semana.  
+- Porcentaje de entregas cumplidas a tiempo.  
+- Total facturado vs total pendiente de cobro.  
 
-Revisa reportes generales: entregas, ingresos, pagos pendientes.
+### Ejemplo real
+El lunes, el administrador revisa el sistema y ve:  
+- “3 entregas completadas ayer”  
+- “2 viajes en ruta”  
+- “1 viaje pendiente de pago”  
 
-Autoriza pagos y verifica documentación (facturas, comprobantes).
+Acción inmediata: contacta al cliente del viaje pendiente para solicitar el comprobante o factura.
 
-Supervisa los estados de entrega.
+---
 
-En la página:
+## 👷‍♂ 2. Operador Logístico  
+**Responsable:** Personal de oficina o despacho  
+**Acceso:** Gestión operativa completa (solo sus operaciones)
 
-Tiene acceso total.
+### Funciones principales
+- Registrar pedidos de clientes.  
+- Asignar tanquero y conductor.  
+- Actualizar estados del viaje:  
+  - *Programado*  
+  - *En ruta*  
+  - *Entregado*  
+- Subir comprobantes (firma del cliente, documentos de entrega).  
+- Registrar información de pago cuando el cliente realiza la transferencia.
 
-Puede ver todos los viajes, modificarlos o eliminarlos.
+### Formulario de registro del viaje
+- Fecha de solicitud  
+- Cliente  
+- Tipo de combustible  
+- Cantidad (galones)  
+- Tanquero asignado  
+- Conductor asignado  
+- Estado actual  
+- Comprobante (PDF/JPG)  
+- Observaciones internas
 
-En el dashboard ve KPIs como:
+### Ejemplo real
+El operador recibe un pedido de *PetroMar*.  
+Registra lo siguiente:
 
-Total galones transportados esta semana.
+- 4,000 galones de Av-Gas  
+- Entrega: **14/11/2025**  
+- Tanquero: **TQ-03**  
+- Conductor: **Luis Salazar**  
+- Estado inicial: *Programado*
 
-Porcentaje de entregas cumplidas a tiempo.
+Más tarde, al confirmarse la entrega, actualiza el estado a *Entregado* y adjunta el comprobante firmado.
 
-Total facturado vs pendiente.
+---
 
-👉 Ejemplo real:
-El lunes, el administrador revisa el sistema y ve:
+## 🚛 3. Conductor  
+**Responsable:** Transportista asignado  
+**Acceso:** Viajes individuales asignados a su ID
 
-“3 entregas completadas ayer, 2 en ruta y 1 pendiente de pago”.
+### Funciones principales
+- Consultar viajes programados desde móvil o tablet.  
+- Marcar “Inicio de viaje” y “Entrega completada”.  
+- (Opcional) Subir foto del comprobante o firma del cliente.  
+- No puede modificar datos financieros.
 
-Decide contactar al cliente del viaje pendiente para solicitar la factura.
+### Pantalla del conductor
+Solo ve viajes asignados. Para cada viaje:
+- Cliente  
+- Fecha  
+- Tipo de combustible  
+- Cantidad  
+- Estado actual  
+- Ubicación de entrega (si aplica)
 
-👷‍♂ 2. Operador logístico
+### Ejemplo real
+Luis ingresa a la app y visualiza:
 
-Responsable: Persona de oficina o despacho que coordina los viajes.
+**Viaje #1456 – Cliente: PetroMar – Estado: En ruta**
 
-Qué hace:
-
-Registra los pedidos que llegan de los clientes.
-
-Asigna un tanquero y conductor.
-
-Actualiza el estado del viaje (“En ruta”, “Entregado”).
-
-Carga la información del comprobante y el pago cuando el cliente paga.
-
-En la página:
-
-Llena el formulario con los datos del viaje:
-
-Fecha de solicitud
-
-Cliente
-
-Tipo y cantidad de combustible
-
-Tanquero
-
-Conductor
-
-Estado actual
-
-Comprobante y observaciones
-
-👉 Ejemplo real:
-El operador recibe una llamada de la empresa “PetroMar”.
-Registra un pedido:
-
-4,000 galones de Av-Gas, entrega el 14/11/2025, tanquero TQ-03, conductor Luis Salazar.
-Luego marca el estado como “Programado”.
-Cuando Luis confirma la entrega, cambia a “Entregado” y adjunta el comprobante firmado.
-
-🚛 3. Conductor
-
-Responsable: Persona que transporta el combustible.
-
-Qué hace:
-
-Consulta sus viajes asignados (desde móvil o tablet).
-
-Marca el inicio de viaje o entrega completada.
-
-(Opcional) Sube foto del comprobante o firma del cliente al entregar.
-
-En la página:
-
-Solo puede ver los viajes asignados a su ID.
-
-No puede editar ni eliminar datos financieros.
-
-👉 Ejemplo real:
-Luis entra a la app y ve:
-
-“Viaje #1456 — Cliente: PetroMar — Estado: En ruta”.
-Cuando entrega el combustible, cambia el estado a “Entregado” y sube una foto del comprobante.
+Tras entregar el combustible:
+- Cambia el estado a *Entregado*.  
+- Sube fotografía del comprobante.
 
