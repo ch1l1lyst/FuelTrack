@@ -4,7 +4,7 @@
 ---
 
 ## ⚙ Escenario Real  
-**Empresa objetivo:** *FuelTrans Guayaquil S.A.*  
+**Empresa objetivo:** *XXXXXXXX Guayaquil S.A.*  
 **Sector:** Transporte y distribución de combustibles.  
 
 El sistema opera con tres roles principales:  
